@@ -9,9 +9,13 @@
 </head>
 
 <body>
-    <h1>Skill #<%= skillNum %></h1>
-    <h3><%= skill.skill %></h3>
-    <h3>Learned: <%= skill.learned ? 'Yes' : 'No' %></h3>
+    <main>
+        <a href="/">Home</a> | <a href="/skills">Skills List</a>
+        <h1>Skill #<%= skillNum %></h1>
+        <h3><%= skill.skill %></h3>
+        <h3>Learned: <%= skill.learned ? 'Yes' : 'No' %></h3>
+        <a href="/skills/<%= skill.id %>/edit">Edit Skill</a>
+    </main>
 </body>
 
 </html>

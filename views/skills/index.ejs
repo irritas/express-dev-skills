@@ -9,16 +9,23 @@
 </head>
 
 <body>
-    <h1>Skills</h1>
-    <ul>
-        <% skills.forEach(skill => { %>
-        <li>
-            <a href="/skills/<%= skill.id %>"><%= skill.skill %></a>
-            -
-            <%= skill.learned ? 'learned' : 'not learned' %>
-        </li>
-        <% }); %>
-    </ul>
+    <main>
+        <a href="/">Home</a>
+        <h1>Skills</h1>
+        <ul>
+            <% skills.forEach(skill => { %>
+            <li>
+                <form action="/skills/<%= skill.id %>?_method=DELETE" class="delete-form" method="POST">
+                    <button type="submit">X</button>
+                </form>
+                <a href="/skills/<%= skill.id %>"><%= skill.skill %></a>
+                -
+                <%= skill.learned ? 'learned' : 'not learned' %>
+            </li>
+            <% }); %>
+        </ul>
+        <a href="/skills/new">Add Skill</a>
+    </main>
 </body>
 
 </html>
